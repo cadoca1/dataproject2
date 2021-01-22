@@ -1,0 +1,54 @@
+
+services:
+        # Nifi: ETL
+        nifi:
+                image: 'apache/nifi:latest'
+                container_name: nifi
+                restart: always
+                ports:
+                - '8080:8080'
+        nifi-registry:
+                image: 'apache/nifi-registry:latest'
+                container_name: nifiregistry
+                restart: always
+                ports:
+                        - '18080:18080'
+        # Jupyter: Notebook Analytics
+        jupyter:
+                image: 'jupyter/pyspark-notebook:spark-2'
+                hostname: jupyterPySpark
+                container_name: jupyterPySpark
+                user: root
+                environment:
+                        - JUPYTER_TOKEN=edem
+                volumes:
+                        - ./config/spark-defaults.conf:/usr/local/spark-2.4.5-bin-had
+                ports:
+                        - '8888:8888'
+        db:
+                build: "."
+                container_name: "database"
+                image: "database:latabase"
+                environment:
+                        POSTGRES_USER: ${POSTGRES_USER:-postgres}
+                        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-Welcome01}
+                        PGDATA: postgres:/data/postgres
+                volumes:
+                        - postgres:/data/postgres
+                ports:
+                        - "5432:5432"
+                restart: unless-stopped
+        pgadmin:
+                container_name: dataproject_pgadmin
+                image: dpage/pgadmin4:4.16
+                environment:
+                        PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+                        PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+                volumes:
+                        - pgadmin:/root/.pgadmin
+                ports:
+                        - "${PGADMIN_PORT:-5050}:80"
+                restart: unless-stopped
+volumes:
+        postgres:
+        pgadmin: 
