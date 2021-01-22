@@ -4,5 +4,5 @@ CREATE TABLE Casas (
 	City_Name varchar(255) , 
 	Rooms integer , 
 	Cost integer ,
-	code integer UNIC KEY
+	code integer NOT NULL UNIQUE
 );
