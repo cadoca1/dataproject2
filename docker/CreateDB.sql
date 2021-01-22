@@ -1,8 +1,8 @@
 CREATE TABLE Casas (
 	id serial PRIMARY KEY,
-	City_ID integer ,
-	City_Name varchar(255) , 
-	Rooms integer , 
-	Cost integer ,
-	code integer NOT NULL UNIQUE
+	house_id integer ,
+	city_name varchar(255) , 
+	rooms integer , 
+	cost integer ,
+	tweet_id integer NOT NULL UNIQUE
 );
