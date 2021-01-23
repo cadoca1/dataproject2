@@ -15,7 +15,7 @@ services:
                         - '18080:18080'
         # Jupyter: Notebook Analytics
         jupyter:
-                image: 'jupyter/pyspark-notebook:spark-2'
+                build: "./jupyter"
                 hostname: jupyterPySpark
                 container_name: jupyterPySpark
                 user: root
