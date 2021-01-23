@@ -60,8 +60,8 @@ services:
                 ports:
                         - "2181:2181"
                 environment:
-                ZOOKEEPER_CLIENT_PORT: 2181
-                ZOOKEEPER_TICK_TIME: 2000
+                        ZOOKEEPER_CLIENT_PORT: 2181
+                        ZOOKEEPER_TICK_TIME: 2000
         #Kafka Broker
         broker:
                 image: confluentinc/cp-kafka:5.4.0
@@ -112,7 +112,7 @@ services:
                         CONTROL_CENTER_INTERNAL_TOPICS_PARTITIONS: 1
                         CONTROL_CENTER_MONITORING_INTERCEPTOR_TOPIC_PARTITIONS: 1
                         CONFLUENT_METRICS_TOPIC_REPLICATION: 1
-                PORT: 9021
+                        PORT: 9021
 volumes:
         postgres:
         pgadmin: 
