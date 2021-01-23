@@ -4,5 +4,5 @@ CREATE TABLE Casas (
 	city_name varchar(255) , 
 	rooms integer , 
 	cost integer ,
-	tweet_id integer NOT NULL UNIQUE
+	tweet_id bigint NOT NULL UNIQUE
 );
