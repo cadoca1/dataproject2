@@ -172,6 +172,8 @@ def algoritmo(text_person):
         
         # Increment house counter
         cursor.execute("UPDATE casas SET c_counter = c_counter + 1 WHERE tweet_id = " + i.tweet_id)
+        
+    return "publicado: \n" + tweet
 
 
 def spark():
