@@ -32,7 +32,7 @@ Nota: Hemos determinado un número máximo de 2 casas para asignar a cada usuari
 - **Kafka**: Hemos incluido esta herramienta de mensajería para gestionar el volumen de datos provenientes de NiFi (tweets de usuarios), con el fin de que Spark consuma de la cola de Kafka en función de sus necesidades y para evitar cuellos de botella, asegurando así el correcto flujo de datos desde nuestro software de ingestión hacia el procesamiento en streaming.
 - **Spark**: Se ha decidido utilizar esta tecnología Big Data para el procesamiento de los datos de tweets, ya que permite un procesamiento en tiempo real (Spark Streaming) y es perfectamente escalable al poder procesar en distribuido, de cara al proyecto real, donde el nivel de tweets por minuto será mayor y necesitemos operar en varias instancias.
 - **Python**: Como lenguaje donde programar el algoritmo de elección de viviendas para los usuarios, así como la conexión con la base de datos y la API de Twitter, ya que es el que más ampliamente se ha visto en clase y con el que más cómodos nos sentimos programando.
-- **Docker**: Se han implementado cinco docker: para NiFi, para la base de datos y para el gestor, para Kafka y para ejecutar el algoritmo. Se ha decidido así ya que era una forma de realizar el despliegue y la configuración de manera automática. Así además, este sistema se convierte en escalable, ya que ante un aumento en el volumen de tweets se pueden desplegar más contenedores de la parte que se necesite escalar en ese momento.
+- **Docker**: Se han implementado cinco Dockers: para NiFi, para la base de datos y para el gestor, para Kafka y para ejecutar el algoritmo. Se ha decidido así ya que era una forma de realizar el despliegue y la configuración de manera automática. Así además, este sistema se convierte en escalable, ya que ante un aumento en el volumen de tweets se pueden desplegar más contenedores de la parte que se necesite escalar en ese momento.
 - **Google Cloud**: Hemos elegido Google Cloud para tener ejecutando constantemente tanto NiFi, como la base de datos y el gestor de bases de datos (PGAdmin), así como Kafka y el algoritmo (Spark-Python). Su elección es debido a que ha sido el que se ha visto en clase y con el cual nos sentíamos cómodos para trabajar.
 
 ## Esquema de la Base de Datos
@@ -40,6 +40,10 @@ Nota: Hemos determinado un número máximo de 2 casas para asignar a cada usuari
 <img src="https://github.com/cadoca1/dataproject2/blob/main/Esquema_BD.png" width="300"/>
 
 ## Esquema del GitHub
+
+- [**Docker**](https://github.com/cadoca1/dataproject2/tree/main/docker): Carpeta con los Dockerfile y los Docker-compose para levantar en Docker todos los procesos. Estructurados por servicio.
+- [**NiFi**](): Template de todo el proceso de ingestión de NiFi, desde Twitter hasta la base de datos PostgreSQL y hasta el broker y topic de Kafka.
+- [**Algoritmo**](https://github.com/cadoca1/dataproject2/blob/main/algoritmo.py): Fichero Python del proceso Spark-Python que realiza todo el proceso de asignar una vivienda disponible a cada usuario.
 
 ## Anexos
 
