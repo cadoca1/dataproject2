@@ -104,6 +104,8 @@ def algoritmo(text_person):
     cursor.execute("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'casas'")
     columns_name = cursor.fetchall()
 
+    cursor.close()
+
     t1 = time.time()
     print("Tiempo de consulta a base de datos: "+ str(t1-t0))
 
@@ -191,6 +193,7 @@ def algoritmo(text_person):
         contador += 1
 
         # Increment house counter
+        cursor, connection = connect()
         cursor.execute("UPDATE casas SET c_counter = c_counter + 1 WHERE tweet_id = " + str(i.tweet_id))
         connection.commit()
         connection.close()
