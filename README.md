@@ -1,4 +1,4 @@
-# Dataproject 2 - Karimun Jawa
+# DataProject 2 - Karimun Jawa
 
 <img src="https://github.com/juanluishg/dataproject1/blob/main/WhatsApp%20Image%202020-12-11%20at%2022.35.04.jpeg" width=50%/>
 
