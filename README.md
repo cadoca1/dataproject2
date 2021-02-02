@@ -31,9 +31,15 @@ Nota: Hemos determinado un número máximo de 2 casas para asignar a cada usuari
 
 <img src="https://github.com/cadoca1/dataproject2/blob/main/Esquema_BD.png" width="300"/>
 
-## Esquema del Github
+## Esquema del GitHub
 
 ## Anexos
+
+[Trello](https://trello.com/b/eVk7yKLI/dataproject2)
+
+[PGAdmin](http://35.238.29.211:5050)
+  - pgadmin4@pgadmin.org
+  - admin
 
 ## Contribuidores
 - Amparo Botella
