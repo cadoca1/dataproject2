@@ -47,7 +47,7 @@ Nota: Hemos determinado un número máximo de 2 casas para asignar a cada usuari
 
 ## Anexos
 
-[Twitter](https://twitter.com/Carlos11284606/with_replies)
+[Cuenta de Twitter](https://twitter.com/Carlos11284606/with_replies)
 
 [Trello](https://trello.com/b/eVk7yKLI/dataproject2)
 
