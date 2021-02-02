@@ -35,7 +35,7 @@ def connect():
                                       database = "dataproject2")
        
         cursor = connection.cursor()
-        return cursor
+        return cursor, connection
         
     except (Exception, psycopg2.Error) as error :
         print ("Error while connecting to PostgreSQL", error)
@@ -44,7 +44,7 @@ def connect():
 
 def algoritmo(text_person):
     tg0 = time.time()
-    cursor = connect()
+    cursor, connection = connect()
     
     playa = ["Valencia", "Barcelona", "Ibiza"]
     ciudad = ["Madrid", "Barcelona", "Valencia", "Sevilla"]
@@ -192,6 +192,9 @@ def algoritmo(text_person):
 
         # Increment house counter
         cursor.execute("UPDATE casas SET c_counter = c_counter + 1 WHERE tweet_id = " + str(i.tweet_id))
+        connection.commit()
+        connection.close()
+        
     t1 = time.time()
     print("Tiempo de publicación: "+ str(t1-t0))
     tg1 = time.time()
