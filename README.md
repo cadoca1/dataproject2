@@ -4,7 +4,7 @@
 
 ## Vídeo Explicativo
 
-[Vídeo Youtube]()
+[Vídeo YouTube]()
 
 ## Funcionamiento
 
