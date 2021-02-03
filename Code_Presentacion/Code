@@ -1,0 +1,76 @@
+# 1. División del tweet del usuario en palabras para extraer las variables de interés con objeto de procesar la asignación de viviendas.
+
+split_text = tweet_text.split(" ")
+name = split_text[3] + " " + split_text[4][:-1]
+salary = split_text[8][:-1]
+members = split_text[19]
+beach = split_text[25][-3:-2]
+city = split_text[26][-3:-2]
+nature = split_text[27][-3:-2]
+party = split_text[28][-2:-1]
+
+
+# 2. Selección de viviendas de la base de datos que satisfacen las necesidades del usuario.
+
+cursor.execute("SELECT * FROM casas WHERE cost <= " + str((int(salary)/12)*0.2) + " and (rooms = " + str(members) + " or rooms = " + str(int(members)+1) + ") and c_counter <=4;")
+
+
+# 3. Relación de ciudades y características o hobbies.
+
+playa = ["Valencia", "Barcelona", "Ibiza"]
+ciudad = ["Madrid", "Barcelona", "Valencia", "Sevilla"]
+naturaleza = ["Oviedo", "Bilbao"]
+fiesta = ["Ibiza", "Madrid", "Barcelona"]
+    
+scoring = {"Madrid": 0, "Barcelona": 0, "Ibiza": 0, "Valencia": 0, "Sevilla": 0, "Oviedo": 0, "Bilbao": 0}
+
+for k in scoring:
+        try:
+            playa.index(k)
+            scoring[k] += int(beach)
+        except (Exception) as error :
+            print("Not present", error)
+
+        try:
+            ciudad.index(k)
+            scoring[k] += int(city)
+        except (Exception) as error :
+            print("Not present", error)
+
+        try:
+            naturaleza.index(k)
+            scoring[k] += int(nature)
+        except (Exception) as error :
+            print("Not present", error)
+
+        try:
+            fiesta.index(k)
+            scoring[k] += int(party)
+        except (Exception) as error :
+            print("Not present", error)
+
+
+# 4. Selección de la 'mejor vivienda', aquella que cuenta con mayor scoring en la relación ciudad-hobbies de entre las seleccionadas que satisfacen las necesidades del usuario.
+
+mejor_casa['score'] = mejor_casa['city_name'].map(scoring)
+resultado = mejor_casa[mejor_casa.score == max(mejor_casa.score)]
+
+
+# 5. Limitación del número máximo de viviendas (2) que se asignan por usuario.
+
+contador = 0
+for _, i in resultado.iterrows():
+        if contador >= 2:
+            break;
+        
+        tweet = "Hi! "+ name + ", your perfect house is placed in " + i.city_name + ", with the code: " + str(i.house_id)
+        tweet += " https://twitter.com/dlpexercisepro1/status/" + str(i.tweet_id)
+
+        # (...) Respuesta al tweet del usuario con la asignación de vivienda.
+        
+        contador += 1
+
+
+# 6. Limitación del número máximo de usuarios (4) que reciben ofertas de una misma vivienda.
+
+cursor.execute("UPDATE casas SET c_counter = c_counter + 1 WHERE tweet_id = " + str(i.tweet_id))
