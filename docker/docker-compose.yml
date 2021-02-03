@@ -27,7 +27,7 @@ services:
                         - '8888:8888'
                         - '7000:7000'
         db:
-                build: "."
+                build: "./db"
                 container_name: "database"
                 image: "database:latabase"
                 environment:
