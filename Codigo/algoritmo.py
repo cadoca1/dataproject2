@@ -163,7 +163,7 @@ def algoritmo(text_person):
     for _, i in resultado.iterrows():
         # Ofrecer como maximo 2 casas a una misma persona
         if contador >= 2:
-            break;    
+            break    
 
         tweet = "Hi! "+ name + ", your perfect house is placed in " + i.city_name + ", with the code: " + str(i.house_id)
         tweet += " https://twitter.com/dlpexercisepro1/status/" + str(i.tweet_id)
