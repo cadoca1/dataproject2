@@ -4,7 +4,7 @@
 
 ## Vídeo Explicativo
 
-[Vídeo Youtube]()
+[Vídeo YouTube]()
 
 ## Funcionamiento
 
@@ -42,8 +42,10 @@ Nota: Hemos determinado un número máximo de 2 casas para asignar a cada usuari
 ## Esquema del GitHub
 
 - [**Docker**](https://github.com/cadoca1/dataproject2/tree/main/docker): Carpeta con los Dockerfile y el Docker-compose para levantar en Docker todos los procesos. Estructurados por servicio.
-- [**NiFi**](): Template de todo el proceso de ingestión de NiFi, desde Twitter hasta la base de datos PostgreSQL y hasta el broker y topic de Kafka.
+- [**NiFi**](https://github.com/cadoca1/dataproject2/blob/main/Nifi/Dataproject2_flow_nifi.xml): Template de todo el proceso de ingestión de NiFi, desde Twitter hasta la base de datos PostgreSQL y hasta el broker y topic de Kafka.
 - [**Algoritmo**](https://github.com/cadoca1/dataproject2/blob/main/algoritmo.py): Fichero Python del proceso Spark-Python que realiza todo el proceso de asignar una vivienda disponible a cada usuario.
+- [**Planificación**](https://github.com/cadoca1/dataproject2/blob/main/Planificaciones%20y%20otros/Planificación_actividades.xlsx): Planificación y calendario de las tareas a realizar por los integrantes del equipo.
+- [**Presupuestos**](https://github.com/cadoca1/dataproject2/tree/main/Presupuestos): Relación de ingresos, gastos y beneficios, atendiendo a diferentes tipos de escenarios.
 
 ## Anexos
 
