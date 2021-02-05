@@ -37,7 +37,7 @@ Nota: Hemos determinado un número máximo de 2 casas para asignar a cada usuari
 
 ## Esquema de la Base de Datos
 
-<img src="https://github.com/cadoca1/dataproject2/blob/main/Imagenes/Esquema_BD.png" width="300"/>
+<img src="https://github.com/cadoca1/dataproject2/blob/main/Images/Esquema_BD.png" width="300"/>
 
 ## Esquema del GitHub
 
