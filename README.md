@@ -23,7 +23,7 @@ Nota: Hemos determinado un número máximo de 2 casas para asignar a cada usuari
 
 ## Arquitectura
 
-<img src="https://github.com/cadoca1/dataproject2/blob/main/Images/Arquitectura1.JPG"/>
+<img src="https://github.com/cadoca1/dataproject2/blob/main/Images/Arquitectura1.JPG" width="500"/>
 
 ### Justificación 
 
